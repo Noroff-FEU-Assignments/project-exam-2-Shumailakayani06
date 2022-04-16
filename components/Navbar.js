@@ -5,12 +5,12 @@ import Image from 'next/image';
 
 const Navbar = () => {
     return ( 
-        <nav>
+        <nav className='navBar'>
             <div className="logo">
                 <Link href="/"><a><h1 className='LOGO'>HOLIDAZE</h1></a></Link>
             </div>
           <Link href="/"><a>Home</a></Link>
-          <Link href="hotels/"><a>Hotels</a></Link>
+          <Link href="/hotels/"><a>Establishments</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
           <Link href="/login"><a>Login</a></Link>
         </nav>

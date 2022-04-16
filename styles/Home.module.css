@@ -1,1 +1,61 @@
+.product{
+    padding: 24px;
+    font-size: 24px;
+}
+
+.product__Row{
+    display: flex;
+}
+
+.product__ColImg,
+.product__Col{
+    flex: 1;
+}
+
+.product__ColImg{
+    max-width: 100px;
+    margin-right: 25px;
+}
+
+
+.homePageTopSection{
+   
+   background-image: url(/image.png);
+   text-align: center;
+    height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 2px 3px 3px 2px rgb(217, 220, 221);
+    background-color: white;
+    
+  
+}
+
+.searchBox{
+    color: white;
+    min-width: 300px;
+    padding: 1em;
+    border-radius: 30px;
+    text-align: center;
+    margin-top: 27em;
+    border: none;
+    box-shadow: 2px 3px 3px 2px rgb(217, 220, 221);
+    background-color: coral;
+    filter: opacity(70%);     
+}
+
+.searchBox::placeholder{
+    color: white;
+}
+
+.slogan{
+  font-size: 30px;
+  padding: 3em;
+  max-width: 400px;
+  color: white;
+  background-color: coral;
+  margin: 1em;
+  filter: opacity(65%);
+  
+}
 
