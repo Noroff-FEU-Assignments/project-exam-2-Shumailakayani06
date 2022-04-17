@@ -1,35 +1,33 @@
 
 import React from "react";
 import Image from "next/image";
-import styles from "../../styles/Home.module.css";
-import Heading from "../../components/elements/Heading";
+import styles from "../styles/Home.module.css";
 import Link from "next/link";
 
 
 export const getStaticProps = async () => {
   const res = await fetch('http://localhost:1337/api/establishments?populate=*');
   const data = await res.json();
-  const hotelCards = data.data;
- 
+  const Card = data.data;
+  
 
 
   return {
-    props: {hotelCards}
+    props: {Card}
     
   }
   
 }
 
-const Hotels = ({hotelCards}) => {
- 
-  console.log(hotelCards)
+const HotelCards = ({Card}) => {
+    console.log(Card);
+  
  
     return ( 
     <div>
-          <Heading content="ALL HOTELS"/>
-        
+         
         <div>
-          {hotelCards.map(item =>(
+          {/* {Card.map(item =>(
            
             <Link href={'/hotels/' + item.id} key={item.id}>
               <a>
@@ -49,13 +47,11 @@ const Hotels = ({hotelCards}) => {
                 </div>
               </a>
             </Link> 
-           ))}
+           ))} */}
        
         </div>
     </div>
      );
 }
  
-export default Hotels;
-
-
+export default HotelCards;

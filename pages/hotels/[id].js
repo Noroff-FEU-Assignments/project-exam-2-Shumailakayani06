@@ -20,23 +20,25 @@ const id = context.params.id;
 const res = await fetch('http://localhost:1337/api/establishments?populate=*' + id);
 const data = await res.json();
 
-const jsonData = data.data;
+const hotelDetail = data.data;
 
-console.log(jsonData)
+console.log(hotelDetail)
 
 return {
-  props : {jsonData}
+  props : {hotelDetail}
 }
 }
 
 
-const Details = ({ jsonData }) => {
-  console.log(jsonData[0].attributes.title)
+const Details = ({ hotelDetail }) => {
+  console.log(hotelDetail)
 
  return ( 
      <div>
-       Detail 
-    {jsonData.title}     
+       Detail
+    {hotelDetail.title}
+      
+     
      </div>
   );
 }

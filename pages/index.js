@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Herobanner from '../components/elements/Herobanner'
+import HotelCards from '../components/HotelCards'
 
 import { productionBrowserSourceMaps } from '../next.config'
 
@@ -18,6 +19,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Herobanner />
+
+      <HotelCards />
     
     </div>
   )
