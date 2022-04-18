@@ -4,7 +4,7 @@ body{
   color: #333;
   font-family: "Nuito";
   max-width: 100%;
-  background-color: rgb(251, 246, 240);
+  
   
 }
 
@@ -91,3 +91,59 @@ nav .logo{
 .hotel_card p{
   color: rgb(116, 116, 116);
 }
+
+
+
+/* FORM STYLE*/
+
+.login_div{
+  width: 100%;
+  text-align: center;
+}
+
+.form_div{
+  text-align: center;
+  display: inline-block;
+  padding: 2em;
+  min-width: 300px;
+  min-height: 350px;
+  box-shadow: 3px 5px 5px 2px grey;
+  
+}
+.form_inputs{
+  text-align: center;
+  padding: 2em;
+  
+}
+
+.form_inputs .input{
+  margin: 1em;
+  padding: 1em;
+  width: 250px;
+  border: none;
+  border-bottom: 1px solid grey;
+}
+
+.loginError{
+  color: red;
+}
+
+.form_inputs::placeholder{
+color: lightslategray;
+}
+
+.form_inputs button{
+  background-color: rgb(107, 177, 221);
+  padding: 0.5em;
+  width: 150px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 1px 1px rgb(202, 202, 202);
+  color: white;
+  margin-top: 2em;
+}
+
+
+
+
