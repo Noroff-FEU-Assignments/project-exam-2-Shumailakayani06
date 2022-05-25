@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Nav from "./Nav";
 import { UserProvider } from "../lib/authContext";
+import Footer from "./Footer";
 
 const Layout = ({ user, loading = false, children}) => (
     <UserProvider value={{ user, loading}}>
@@ -16,16 +17,17 @@ const Layout = ({ user, loading = false, children}) => (
         items-center
         bg-white
         mx-auto
-        w-2/4
+        w-3/4
         rounded-lg
         my-16
         p-16
         ">
         
-        <div className="text-2xl font-medium">{children}</div>
+        <div className="text-1xl font-medium">{children}</div>
         </div>
 
     </main>
+    <Footer/>
         </UserProvider>
 )
 

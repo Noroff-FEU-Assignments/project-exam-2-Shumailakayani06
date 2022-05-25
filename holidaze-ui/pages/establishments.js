@@ -57,7 +57,7 @@ export default EstablishmentList;
 export async function getStaticProps(){
    
   const estabResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/establishments?pagination[page]=1&pagination[pageSize]=4`);
-  console.log(estabResponse);
+  
   return{
       props: {
           establishments: estabResponse

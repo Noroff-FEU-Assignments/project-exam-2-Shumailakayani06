@@ -52,7 +52,7 @@ const Nav = () => {
             <div>
                 <Link href="/" passHref>
                     <a>
-                       <h1>HOLIDAZE</h1>
+                       <h1 className="logo">HOLIDAZE</h1>
                     </a>
                 </Link>
             </div>
@@ -83,15 +83,22 @@ const Nav = () => {
             md:pt-0 space-x-2">
                 <li>
                     <Link href="/">
-                      <a className="md:p-2 py-2 block hover:text-purple-400">
+                      <a className="md:p-2 py-2 block hover:text-purple-400 nav-link">
                           Home
                         </a>
                     </Link>
                 </li>
                 <li>
                     <Link href="/establishments">
-                      <a className="md:p-2 py-2 block hover:text-purple-400">
+                      <a className="md:p-2 py-2 block hover:text-purple-400 nav-link">
                           Establishments
+                     </a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href="/contact">
+                      <a className="md:p-2 py-2 block hover:text-purple-400 nav-link">
+                          Contact
                      </a>
                     </Link>
                 </li>
@@ -99,7 +106,7 @@ const Nav = () => {
     (user ? (
         <li>
             <Link href="/profile">
-                <a className="md:p-2 py-2 block hover:text-purple-400">
+                <a className="md:p-2 py-2 block hover:text-purple-400 nav-link">
                    Profile
                 </a>
             </Link>
@@ -111,7 +118,7 @@ const Nav = () => {
 (user ? (
     <li>
         <a
-        className="md:p-2 py-2 block hover:text-purple-400"
+        className="md:p-2 py-2 block hover:text-purple-400 nav-link"
         onClick={logout}
         style={{ cursor: 'pointer'}}>
             Logout
