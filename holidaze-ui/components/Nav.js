@@ -95,22 +95,55 @@ const Nav = () => {
                      </a>
                     </Link>
                 </li>
-                <li>
-                    <Link href="/contact">
-                      <a className="md:p-2 py-2 block hover:text-purple-400 nav-link">
-                          Contact
-                     </a>
-                    </Link>
-                </li>
+         
+                {!loading && !user ? (
+     <li>
+     <Link href="/contact">
+       <a className="md:p-2 py-2 block hover:text-purple-400 nav-link">
+           Contact
+      </a>
+     </Link>
+ </li>
+) : (
+    ' '
+)}
     {!loading &&
     (user ? (
         <li>
-            <Link href="/profile">
+            <Link href="/query">
                 <a className="md:p-2 py-2 block hover:text-purple-400 nav-link">
-                   Profile
+                   Queries
                 </a>
             </Link>
         </li>
+        
+    ) : (
+        ' '
+    ))}
+
+{!loading &&
+    (user ? (
+        <li>
+            <Link href="/message">
+                <a className="md:p-2 py-2 block hover:text-purple-400 nav-link">
+                   Messages
+                </a>
+            </Link>
+        </li>
+        
+    ) : (
+        ' '
+    ))}
+    {!loading &&
+    (user ? (
+        <li>
+            <Link href="/hotel">
+                <a className="md:p-2 py-2 block hover:text-purple-400 nav-link">
+                   Add Hotel
+                </a>
+            </Link>
+        </li>
+        
     ) : (
         ' '
     ))}
@@ -156,17 +189,14 @@ const Nav = () => {
             </button>
         </form>
         </li>
-        <li>
-            <Link href="/register">
-                <a className="md:p-2 block py-2 hover:text-purple-400 text-black">
-                    Register
-                </a>
-            </Link>
-        </li>
+   
         </>
 ) : (
     ' '
 )}
+
+
+
     </ul>
  </div>
 

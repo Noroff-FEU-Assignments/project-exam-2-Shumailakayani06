@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import Layout from "../../components/Layout";
@@ -49,16 +50,24 @@ return(
             </span>
         </h1>
         <img src={establishment.attributes.image_url} alt=""/>
-        <p>
             {' '}
             <p className="bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent">
                 {establishment.attributes.rate}
             </p> 
-             {establishment.attributes.price} kr
+ 
+             <p>{establishment.attributes.price} kr
         </p>
+
         <p>Description: {establishment.attributes.description}</p>
         <p>Adress: {establishment.attributes.adress}</p>
         <p>Telephone nr: {establishment.attributes.number}</p>
+        <div>
+       
+            <Link href={`bookings/` + establishment.id}>
+                Booking Enquiry
+            </Link>
+           
+        </div> 
     
         {user && (
             <>
@@ -68,7 +77,7 @@ return(
                 </span>
                 <form onSubmit={handleSubmit}>
                     <textarea
-                    className="w-full text-sm px-3 py-2 text-gray-700 border border-2 border-teal-400 rounded-lg focus:outline-none"
+                    className="w-full text-sm px-3 py-2 text-gray-700 border-2 border-teal-400 rounded-lg focus:outline-none"
                     rows="4"
                     value={review.value}
                     onChange={handleChange}

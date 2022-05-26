@@ -21,7 +21,7 @@ const EstablishmentList = ({establishments}) => {
             <Establishments establishments={data} />
             <div className="space-x-2 space-y-2">
                 <button 
-                className={`md:p-2 rounded py-2 text-black text-white p-2 ${
+                className={`md:p-2 rounded py-2 text-white p-2 ${
                     pageIndex === 1 ? 'bg-gray-300' : 'bg-blue-400'
                 }`}
                 disabled={pageIndex === 1}
@@ -31,7 +31,7 @@ const EstablishmentList = ({establishments}) => {
                     Previous
                 </button>
                 <button
-                className={`md:p-2 rounded py-2 text-black text-white p-2 ${
+                className={`md:p-2 rounded py-2 text-white p-2 ${
                     pageIndex === (data && data.meta.pagination.pageCount)
                     ? 'bg-gray-300'
                     : 'bg-blue-400'

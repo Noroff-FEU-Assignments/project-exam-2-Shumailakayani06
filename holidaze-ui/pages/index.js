@@ -9,6 +9,7 @@ export default function Home() {
   return (
  <Layout user= {user}>
  <h1 className="font-bold text-5xl"> Holidaze, </h1>
+ 
  </Layout>
   )
 }
