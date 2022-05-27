@@ -6,7 +6,9 @@ import Footer from "./Footer";
 const Layout = ({ user, loading = false, children}) => (
     <UserProvider value={{ user, loading}}>
     <Head>
-        <title> Database</title>
+        <title> Holizade</title>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </Head>
     <Nav />
     <main className="px-4">
@@ -15,12 +17,13 @@ const Layout = ({ user, loading = false, children}) => (
         flex
         justify-center
         items-center
-        bg-white
+       text-white
         mx-auto
         w-3/4
         rounded-lg
-        my-16
+        my-20
         p-16
+        heading
         ">
         
         <div className="text-1xl font-medium">{children}</div>

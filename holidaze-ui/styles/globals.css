@@ -11,6 +11,10 @@
     color: rgb(75, 131, 168);
 }
 
+.heading{
+    margin-top: 10em;
+}
+
 .card{
     max-width: 400px;
     border-radius: 20px;

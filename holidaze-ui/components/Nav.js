@@ -37,67 +37,56 @@ const Nav = () => {
     const handleChange = (e) => {
         setData({...data, [e.target.name]: e.target.value});
     };
+
+    let [open, setOpen] = useState(false);
+
+
     return(
         <nav
         className="
-        flex flex-wrap
-        items-center
-        justify-between
-        w-full
-        py-4
-        md:py-0
-        px-4
-        text-lg text-gray-700
-        bg-white">
-            <div>
+        shadow-md w-full fixed top-0 left-0 flex justify-between bg-white">
+       
+            <div className="md-flex flex items-center justify-between py-4 md:px-10 px-7 w-full">
+               <div className="font-bold text-2xl curson-pointer flex items center ">
+                <span>
                 <Link href="/" passHref>
                     <a>
                        <h1 className="logo">HOLIDAZE</h1>
                     </a>
                 </Link>
-            </div>
-            <svg
-            xmlns="http://www.w3.org/2000/svg"
-            id="menu-button"
-            className="h-6 w-6 cursor-pointer md:hidden block"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor">
-                <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-                />
-            </svg>
+                </span>
+                </div>
 
-     <div
-     className="hidden w-full md:flex md:items-center md:w-auto"
-     id="menu">
+     <div onClick={() => setOpen(!open)}
+     className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden">
+     <ion-icon name={open ? 'close':'menu'}></ion-icon>
+     </div>
+     <div>
      <ul
-            className="
-            pt-4
-            text-base text-grey-700
-            md:flex
-            md:justify-between
-            md:pt-0 space-x-2">
-                <li>
+            className={`
+             md:flex md:items-center md:pb-0 pb-12  
+             bg-white
+              absolute md:static md:z-auto z-[-1] left-0 w-full md:w-full md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-20 opacity-100':'top-[-490px]'} md:opacity-100 opaxity-0
+            `}
+            >
+                    <li >
                     <Link href="/">
-                      <a className="md:p-2 py-2 block hover:text-purple-400 nav-link">
+                      <a className="md:p-2 py-2 block hover:text-purple-400 duration-500 nav-link">
                           Home
                         </a>
                     </Link>
                 </li>
                 <li>
                     <Link href="/establishments">
-                      <a className="md:p-2 py-2 block hover:text-purple-400 nav-link">
+                      <a className="md:p-2 py-2 block hover:text-purple-400 duration-500 nav-link">
                           Establishments
                      </a>
                     </Link>
                 </li>
+            
          
                 {!loading && !user ? (
-     <li>
+     <li  >
      <Link href="/contact">
        <a className="md:p-2 py-2 block hover:text-purple-400 nav-link">
            Contact
@@ -149,7 +138,7 @@ const Nav = () => {
     ))}
 {!loading &&
 (user ? (
-    <li>
+    <li >
         <a
         className="md:p-2 py-2 block hover:text-purple-400 nav-link"
         onClick={logout}
@@ -162,14 +151,14 @@ const Nav = () => {
 ))}
 {!loading && !user ? (
     <>
-    <li>
+    <li >
         <form onSubmit={handleSubmit} className="form-inline">
             <input 
             type="text"
             name="identifier"
             onChange={handleChange}
             placeholder="Username"
-            className="md:p-2 form-input py-2 rounded mx-2"
+            className=" form-input py-2 rounded mx-2"
             required
             />
             <input 
@@ -177,7 +166,7 @@ const Nav = () => {
             name="password"
             onChange={handleChange}
             placeholder="Password"
-            className="md:p-2 form-input py-2 rounded mx-2"
+            className="md:p-2 form-input py-2 rounded mx-2 "
             required
             />
 
@@ -198,10 +187,13 @@ const Nav = () => {
 
 
     </ul>
- </div>
+    </div>
+    </div>
 
  </nav>
     );
 }
+
+
 
 export default Nav;
