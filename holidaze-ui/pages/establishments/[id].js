@@ -32,8 +32,8 @@ const Establishment = ({establishment, jwt, plot, error}) => {
                     data: {
                         review: review.value,
                         reviewer: getUserFromLocalCookie(),
-                        Establishment: establishment.id,
-                        establishment: establishment.attributes.title
+                        // Establishment: establishment.id,
+                        // establishment: establishment.attributes.title
                     }
                 })
             });
@@ -51,23 +51,26 @@ return(
         </h1>
         <img src={establishment.attributes.image_url} alt=""/>
             {' '}
+            <div className="detail">
+            <div>
             <p className="bg-gradient-to-r from-yellow-400 to-yellow-500 bg-clip-text text-transparent">
                 {establishment.attributes.rate}
             </p> 
- 
-             <p>{establishment.attributes.price} kr
-        </p>
-
-        <p>Description: {establishment.attributes.description}</p>
-        <p>Adress: {establishment.attributes.adress}</p>
-        <p>Telephone nr: {establishment.attributes.number}</p>
+            </div>
+    <div>
+             <p><span className="italic bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2 span">Price: </span>{establishment.attributes.price} kr</p>
+     </div>
+<div>
+        <p><span className="span italic bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2 ">Description: </span>{establishment.attributes.description}</p>
+        </div>
         <div>
-       
-            <Link href={`bookings/` + establishment.id}>
-                Booking Enquiry
-            </Link>
-           
-        </div> 
+        <p><span className="span italic bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2 ">Adress: </span>{establishment.attributes.adress}</p>
+        </div>
+        <div>
+        <p><span className="span italic bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2 ">Telephone nr: </span>{establishment.attributes.number}</p>
+        </div>
+        </div>
+ 
     
         {user && (
             <>

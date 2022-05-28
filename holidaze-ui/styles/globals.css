@@ -15,17 +15,97 @@
     margin-top: 10em;
 }
 
+.homepage-card {
+min-width: 1000px;
+
+}
+
+
 .card{
-    max-width: 400px;
-    border-radius: 20px;
-  
-    margin: 1em 0;
+    width: 500px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     cursor: pointer;
+    margin-top: 5em;
+    color: black;
+    
+}
+.card:hover{
+    opacity: 70%;
+}
+
+.card h1{
+    background: -webkit-linear-gradient(rgb(46, 52, 221), rgb(94, 30, 119));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-top: 0.5em;
+}
+.card h2{
+    padding-top: 0.5em;
+}
+
+.btnUi{
+color: black;
+    width: 1000px;
+    cursor: pointer;
+    padding: 0.5em;
+}
+.btnUi:hover{
+  opacity: 60%;
+}
+
+
+.estab-card img{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.estab-card h1,
+.estab-card h2{
+    padding: 0.5em;
 }
 
 .card img{
- border-top-left-radius: 5%;
- border-top-right-radius: 5%;
+ border-bottom-left-radius: 20px;
+ border-bottom-right-radius: 20px;
+}
+.establishment-card {
+    width: 100%;
+    text-align: center;
+    
+}
+.establishment-section{
+    text-align: center;
+}
+.div-estab{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+   
+}
+
+.establishment-card li{
+ display: flex;
+ justify-content: space-between;
+}
+.estab-card{
+    text-align: center;
+    width: 1000px;
+    
+ }
+
+
+.main-card-info{
+    display: flex;
+    justify-content: space-around;
+    padding: 1em;
+}
+
+.main-card-info h1{
+    font-size: 50px;
+    background: -webkit-linear-gradient(rgb(84, 186, 181), rgb(217, 158, 240));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 
@@ -33,4 +113,124 @@
     border: 1px solid rgb(195, 248, 235);
     padding: 1em;
     margin-top: 1em;
+}
+
+
+
+
+
+/* EXPLORE SLIDER */
+
+
+.slider{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image{
+    width: 1000px;
+    height: 600px;
+  
+    
+}
+
+.right-arrow{
+    position: absolute;
+    top: 50%;
+    right: 32px;
+    font-size: 3rem;
+    color: white;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}
+
+.right-arrow:hover,
+.left-arrow:hover{
+    opacity: 70%;
+}
+
+.left-arrow{
+    position: absolute;
+    top: 50%;
+    left: 32px;
+    font-size: 3rem;
+    color: white;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+}
+
+.slide{
+    opacity: 0;
+    transition-duration: 1s ease;
+}
+
+.slide img{
+    border-radius: 20px;
+}
+
+.slide.active{
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1.08);
+}
+
+.explore-h1{
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
+
+
+/* CONTACT */
+
+.contact-form h1{
+margin-bottom: 2em;
+}
+.contact-form input{
+    padding: 0.8em;
+    margin-bottom: 1em;
+    color: black;
+}
+.contact-form textarea{
+    margin-bottom: 1em;
+}
+
+/* Enquiry section */
+.enquiry {
+    margin-top: 4em;
+}
+.enquiry form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   
+}
+
+.enquiry div {
+    margin: 1em;
+   
+}
+.enquiry input{
+    padding: 0.5em;
+    width: 300px;
+    color: black;
+}
+
+/*detail page*/
+
+.detail div{
+    margin-top: 1em;
+    font-size: 20px;
+}
+
+/* Herobanner */
+
+.herobanner img{
+    width: 100%;
+
 }

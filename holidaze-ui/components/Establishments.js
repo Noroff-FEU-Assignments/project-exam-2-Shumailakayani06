@@ -4,31 +4,30 @@ import { useUser } from "../lib/authContext";
 const Establishments = ({establishments}) => {
     const { user, loading } = useUser();
     return (
-        <>
+        <section className="establishment-section">
        
   
-        <ul className="list-none space-y-4 text-4xl font-bold mb-3 ">
+        <ul className="list-none space-y-4 text-4xl font-bold mb-3 div-estab ">
             {establishments && 
             establishments.data.map((establishment) =>{
                 return(
-                    <>
+                    <ul className="establishment-card">
                     <li key={establishment.id}>
                         <Link href={`establishments/` + establishment.id} >
-                             <div className=" border-2 border-teal-400 rounded-lg focus:outline-none card">
+                             <div className=" border-2 border-teal-400 rounded-lg focus:outline-none card estab-card">
                              <img src={establishment.attributes.image_url} alt=""/>
                                  <h1>{establishment.attributes.title}</h1>
                                  <h2>{establishment.attributes.rate}</h2>
-                             </div>
-                            
+                             </div>    
                         </Link>
                     </li>
                     {!loading && !user ? (
-                    <ul>
+                    <ul className="estabBtn">
                     <li key={establishment.id}>
                         <Link href={`bookings/` + establishment.id} >
-                             <div className="border-2 border-teal-400 rounded-lg focus:outline-none card">
+                             <div className="  rounded-lg focus:outline-none btnDiv">
                              
-                                 <h1>book{establishment.attributes.title}now</h1>
+                                 <h1 className="md:p-2 rounded py-2 text black bg-purple-300 p-2 btnUi">Book {establishment.attributes.title}</h1>
                                  
                              </div>
                             
@@ -38,13 +37,13 @@ const Establishments = ({establishments}) => {
                         ) : (
                             ' '
                         )}
-                        </>
+                        </ul>
                 
                 )
             })}
         </ul>
        
-        </>
+        </section>
     )
 }
 

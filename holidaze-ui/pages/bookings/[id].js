@@ -69,6 +69,7 @@ const Booking = ({establishment, jwt, plot, error}) => {
     }
 return(
     <Layout user= {user}>
+        
         <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter mb-4">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2">
              {establishment.attributes.title}
@@ -76,27 +77,32 @@ return(
         </h1>
 
         <form onSubmit={handleSubmit}>
+            <div className="enquiry">
+            <div>
                     <input
                     className="border-2 border-teal-400 rounded-lg focus:outline-none"
                     type="text"
                     value={firstname.value}
                     onChange={handleFirstName}
                     placeholder="Enter your name" />
-
+          </div>
+          <div>
                         <input
                     className="border-2 border-teal-400 rounded-lg focus:outline-none"
                     type="text"
                     value={lastname.value}
                     onChange={handleLastName}
                     placeholder="Enter your lastname" />
-
+</div>
+<div>
                         <input
                     className="border-2 border-teal-400 rounded-lg focus:outline-none"
                     type="email"
                     value={email.value}
                     onChange={handleEmail}
                     placeholder="Enter your email" />
-
+</div>
+<div>
                         <input
                     className="border-2 border-teal-400 rounded-lg focus:outline-none"
                     type="date"
@@ -104,8 +110,9 @@ return(
                     onChange={handleDate}
                     placeholder="" />
 
-             
-                    
+</div>
+
+                    <div>
                     <button 
                     className="md:p-2 rounded py-2 text black bg-purple-200 p-2"
                     type="submit"
@@ -113,9 +120,11 @@ return(
                         Book now
                         
                     </button>
+                    </div>
+                    </div>
                 
                 </form>
-       
+                
       
     </Layout>
 )

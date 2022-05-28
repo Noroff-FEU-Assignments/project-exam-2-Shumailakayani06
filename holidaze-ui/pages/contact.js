@@ -31,7 +31,7 @@ const Contact = (dataReturn) => {
                 method: 'POST',
                 headers:{
                     'Content-Type': 'application/json',
-                    // 'Authorization': `Bearer ${jwt}`
+                   
                 },
                 body: JSON.stringify({
                     data:{
@@ -53,14 +53,12 @@ const Contact = (dataReturn) => {
         
        
         <Layout>
-
-    
-       
-            <>
-            <h2 className="text-3xl md:text-4xl font extrabold leading-tighter mb-4 mt-4">
-                <span className="bg-clip-text text-transperant bg-gradient-to-r from-blue-500 to-teal-400 py-2">
-                    Messages
+            <section className="contact-form">
+            <h1 className="text-3xl md:text-6xl font-extrabold leading-tighter mb-4">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2">
+                   Contact us,
                 </span>
+            </h1>
         
                 <form onSubmit={handleSubmit}>
                     <input
@@ -74,21 +72,21 @@ const Contact = (dataReturn) => {
                     rows="4"
                     value={message.value}
                     onChange={handleChange}
-                    placeholder="Add your review"
+                    placeholder="Write a message..."
                     ></textarea>
                     
                     <button 
-                    className="md:p-2 rounded py-2 text black bg-purple-200 p-2"
+                    className="md:p-2 rounded py-2 text black bg-purple-300 p-2"
                     type="submit"
                     >
-                        Add Message
+                        Send Message
                         
                     </button>
                 
                 </form>
-            </h2>
+         
            
-            </>
+            </section>
   
     </Layout>
     )

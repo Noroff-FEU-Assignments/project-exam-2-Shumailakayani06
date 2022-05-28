@@ -9,6 +9,7 @@ const Layout = ({ user, loading = false, children}) => (
         <title> Holizade</title>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
     </Head>
     <Nav />
     <main className="px-4">
@@ -19,7 +20,7 @@ const Layout = ({ user, loading = false, children}) => (
         items-center
        text-white
         mx-auto
-        w-3/4
+        w-full
         rounded-lg
         my-20
         p-16
