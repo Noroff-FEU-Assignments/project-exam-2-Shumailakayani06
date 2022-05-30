@@ -66,13 +66,15 @@ const Contact = (dataReturn) => {
                     type="text"
                     value={messager.value}
                     onChange={handleNameChange}
-                    placeholder="Enter your name" />
+                    placeholder="Enter your name"
+                    required={true} />
                     <textarea
                     className="w-full text-sm px-3 py-2 text-gray-700 border-2 border-teal-400 rounded-lg focus:outline-none"
                     rows="4"
                     value={message.value}
                     onChange={handleChange}
                     placeholder="Write a message..."
+                    required={true} 
                     ></textarea>
                     
                     <button 

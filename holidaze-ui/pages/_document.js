@@ -6,8 +6,8 @@ export default function Document(){
             <Head>
                 <body className="bg-gradient-to-r
                 from-teal-200
-                via-orange-200
-                to-blue-200">
+                  via-yellow-50
+                to-blue-300">
                     <Main />
                     <NextScript />
                 </body>

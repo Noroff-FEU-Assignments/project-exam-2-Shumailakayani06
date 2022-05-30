@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useUser } from "../lib/authContext";
 
 const Establishments = ({establishments}) => {
+     
     const { user, loading } = useUser();
     return (
         <section className="establishment-section">
@@ -10,6 +11,7 @@ const Establishments = ({establishments}) => {
         <ul className="list-none space-y-4 text-4xl font-bold mb-3 div-estab ">
             {establishments && 
             establishments.data.map((establishment) =>{
+         
                 return(
                     <ul className="establishment-card">
                     <li key={establishment.id}>
@@ -27,7 +29,7 @@ const Establishments = ({establishments}) => {
                         <Link href={`bookings/` + establishment.id} >
                              <div className="  rounded-lg focus:outline-none btnDiv">
                              
-                                 <h1 className="md:p-2 rounded py-2 text black bg-purple-300 p-2 btnUi">Book {establishment.attributes.title}</h1>
+                                 <h1 className="md:p-2 rounded py-2 text-blue-400 bg-white p-2 btnUi">Book {establishment.attributes.title}</h1>
                                  
                              </div>
                             
@@ -48,3 +50,4 @@ const Establishments = ({establishments}) => {
 }
 
 export default Establishments;
+

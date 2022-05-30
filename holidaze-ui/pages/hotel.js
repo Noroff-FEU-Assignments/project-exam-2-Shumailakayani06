@@ -28,6 +28,9 @@ const Hotel = () => {
     const [ price, setPrice] = useState({
         value: '',
     });
+    const [ image, setImage] = useState({
+        value: '',
+    });
 
     const handleTitle = (e) => {
         setTitle({ value: e.target.value})
@@ -46,6 +49,9 @@ const Hotel = () => {
     }
     const handlePrice = (e) => {
         setPrice({ value: e.target.value})
+    }
+    const handleImage = (e) => {
+        setImage({ value: e.target.value})
     }
 
 
@@ -68,6 +74,7 @@ const Hotel = () => {
                     number: number.value,
                     rate: rate.value,
                     price: price.value,
+                    image_url: image.value
                         
                     }
                 })
@@ -79,61 +86,89 @@ const Hotel = () => {
     }
 return(
     <Layout user= {user}>
+
+<h2 className="text-3xl md:text-6xl font-extrabold leading-tighter mb-4 ">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2">
+                 Add Establishment
+                </span>
+            </h2>
    
 
-        <form onSubmit={handleSubmit}>
-                    <input
+        <form onSubmit={handleSubmit} className="add-hotel">
+              <div>
+              <input
                     className=" border-2 border-teal-400 rounded-lg focus:outline-none"
                     type="text"
                     value={title.value}
                     onChange={handleTitle}
-                    placeholder="Title" />
-
-                        <input
+                    placeholder="Title"
+                    required={true}  />
+              </div>
+                <div>
+                <input
                     className=" border-2 border-teal-400 rounded-lg focus:outline-none"
                     type="text"
                     value={adress.value}
                     onChange={handleAdress}
-                    placeholder="Adress" />
-
-                        <input
+                    placeholder="Adress"
+                    required={true}  />
+                </div>
+                <div>
+                <input
                     className=" border-2 border-teal-400 rounded-lg focus:outline-none"
                     type="number"
                     value={number.value}
                     onChange={handleNumber}
-                    placeholder="Enter phone number" />
-
-                        <input
+                    placeholder="Enter phone number" 
+                    required={true} />
+                </div>
+                <div>
+                <input
                     className="border-2 border-teal-400 rounded-lg focus:outline-none"
                     type="text"
                     value={rate.value}
                     onChange={handleRate}
-                    placeholder="add rating⭐️" />
-
-                  <input
+                    placeholder="add rating⭐️"
+                    required={true}  />
+                </div>
+                <div>
+                <input
                     className="border-2 border-teal-400 rounded-lg focus:outline-none"
                     type="number"
                     value={price.value}
                     onChange={handlePrice}
-                    placeholder="Enter price" />
-
-                   <textarea
+                    placeholder="Enter price"
+                    required={true}  />
+                </div>
+                <div>
+                <input
+                    className="border-2 border-teal-400 rounded-lg focus:outline-none"
+                    type="file"
+                    value={image.value}
+                    onChange={handleImage}
+                    placeholder="Enter image url"
+                    required={true}  />
+                </div>
+                <div>
+                <textarea
                     className="w-full text-sm px-3 py-2 text-gray-700  border-2 border-teal-400 rounded-lg focus:outline-none"
                     rows="4"
                     value={description.value}
                     onChange={handleDescription}
                     placeholder="Add your description"
+                    required={true} 
                     ></textarea>
-
-             
-                    
-                    <button 
-                    className="md:p-2 rounded py-2 text black bg-purple-200 p-2"
+                </div>
+               <div>
+               <button 
+                    className="md:p-2 rounded py-2 text black bg-purple-300 p-2"
                     type="submit"
                     >
-                       Update Hotel
+                       Add Establishment
                         
                     </button>
+               </div>
+            
                 
                 </form>
        

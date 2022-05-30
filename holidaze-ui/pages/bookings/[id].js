@@ -84,6 +84,7 @@ return(
                     type="text"
                     value={firstname.value}
                     onChange={handleFirstName}
+                    required={true} 
                     placeholder="Enter your name" />
           </div>
           <div>
@@ -92,6 +93,7 @@ return(
                     type="text"
                     value={lastname.value}
                     onChange={handleLastName}
+                    required={true} 
                     placeholder="Enter your lastname" />
 </div>
 <div>
@@ -100,6 +102,7 @@ return(
                     type="email"
                     value={email.value}
                     onChange={handleEmail}
+                    required={true} 
                     placeholder="Enter your email" />
 </div>
 <div>
@@ -108,13 +111,14 @@ return(
                     type="date"
                     value={date.value}
                     onChange={handleDate}
+                    required={true} 
                     placeholder="" />
 
 </div>
 
                     <div>
                     <button 
-                    className="md:p-2 rounded py-2 text black bg-purple-200 p-2"
+                    className="md:p-2 rounded py-2 text black bg-purple-300 p-2 btnDiv"
                     type="submit"
                     >
                         Book now

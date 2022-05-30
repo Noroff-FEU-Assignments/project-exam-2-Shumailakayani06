@@ -22,15 +22,26 @@ const Home = ({establishments}) => {
       
      
         <Layout user={user}>
-        <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter mb-4">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2">
+            <div className="home-heading">
+        
+            <div> 
+                <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter mb-4"> 
+                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2">
                    Welcome to Holidaze,
                 </span>
-                <span className=" text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2"> Where the world comes to stay</span>
-            </h1>
+                </h1> 
+           </div>  
+            <div>
+               <h4 className=" text-2xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2"> Where the world comes to stay</h4>
+            </div>
+                
+           
+            </div>
             <Herobanner/>
+          
+           
             <Homepageslider establishments={data} />
-            <div className="space-x-2 space-y-2">
+            <div className="space-x-4 space-y-4 home-slider-btn">
                 <button 
                 className={`md:p-2 rounded py-2 text-white p-2 ${
                     pageIndex === 1 ? 'bg-gray-300' : 'bg-blue-400'
@@ -59,9 +70,9 @@ const Home = ({establishments}) => {
                 </span>
             </div>
 
-    <ImageSlider slides={SliderData}/>
-
-       
+   
+           
+            <ImageSlider slides={SliderData}/>
 
         </Layout>
       

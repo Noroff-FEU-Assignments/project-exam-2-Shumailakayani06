@@ -28,6 +28,7 @@ const ImageSlider = ({slides}) => {
                   Explore Bergen
                 </span>
             </h2>
+            
     <section className='slider'>
    
        

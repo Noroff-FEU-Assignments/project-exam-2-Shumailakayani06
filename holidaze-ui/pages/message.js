@@ -22,22 +22,26 @@ const Message = (messageReturn) => {
     
         {user && (
             <>
-            <h2 className="text-3xl md:text-4xl font extrabold leading-tighter mb-4 mt-4">
-                <span className="bg-clip-text text-transperant bg-gradient-to-r from-blue-500 to-teal-400 py-2">
-                    Booking Message
+        <h2 className="text-3xl md:text-6xl font-extrabold leading-tighter mb-4 ">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2">
+                 Messages
                 </span>
-              
             </h2>
-            <ul>
+            <ul className="message-ul">
                 {
                     messageReturn.messageReturn && 
                     messageReturn.messageReturn.map((message) => {
                     return (
-                        <li key={message.id}>
-                            <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transperant">
-                                {message.attributes.messager}
-                            </span>{' '}
-                            {message.attributes.message}
+                        <li key={message.id} className=" border-2 border-teal-400 rounded-lg focus:outline-none">
+                            <div>
+                            <span className="italic bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2">
+                               Name : 
+                            </span>
+                            <span className="text-black italic"> {message.attributes.messager}</span>
+                            </div>
+                           <div>
+                         <span className="italic bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2"> Said : </span> <span className="text-black italic" > " {message.attributes.message} " </span> 
+                          </div>
                         
                             
                         </li>

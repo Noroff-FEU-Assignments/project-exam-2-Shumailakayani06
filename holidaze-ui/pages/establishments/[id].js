@@ -13,9 +13,16 @@ const Establishment = ({establishment, jwt, plot, error}) => {
     const [ review, setReview] = useState({
         value: '',
     });
+    const [ reviewer, setReviewer] = useState({
+        value: '',
+    });
 
     const handleChange = (e) => {
         setReview({ value: e.target.value})
+    }
+
+    const handleReviewer = (e) => {
+        setReviewer({ value: e.target.value})
     }
 
     const handleSubmit = async (e) => {
@@ -31,7 +38,7 @@ const Establishment = ({establishment, jwt, plot, error}) => {
                 body: JSON.stringify({
                     data: {
                         review: review.value,
-                        reviewer: getUserFromLocalCookie(),
+                        reviewer: reviewer.value,
                         // Establishment: establishment.id,
                         // establishment: establishment.attributes.title
                     }
@@ -58,7 +65,7 @@ return(
             </p> 
             </div>
     <div>
-             <p><span className="italic bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2 span">Price: </span>{establishment.attributes.price} kr</p>
+             <p><span className="italic bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2 span">Nok: </span>{establishment.attributes.price} kr</p>
      </div>
 <div>
         <p><span className="span italic bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2 ">Description: </span>{establishment.attributes.description}</p>
@@ -69,16 +76,30 @@ return(
         <div>
         <p><span className="span italic bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2 ">Telephone nr: </span>{establishment.attributes.number}</p>
         </div>
+        <Link href="/establishments">
+        <div className="  rounded-lg focus:outline-none btnDiv">
+           <a className="md:p-2 rounded py-2 text black bg-purple-300 p-2">Back to establishments</a>
+           </div>
+        </Link>
         </div>
  
     
-        {user && (
-            <>
-            <h2 className="text-3xl md:text-4xl font extrabold leading-tighter mb-4 mt-4">
-                <span className="bg-clip-text text-transperant bg-gradient-to-r from-blue-500 to-teal-400 py-2">
-                    Reviews
+        {!user && (
+            <section className="review-section">
+   <h2 className="text-3xl md:text-6xl font-extrabold leading-tighter mb-4 ">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2">
+              Reviews
                 </span>
+            </h2>
                 <form onSubmit={handleSubmit}>
+                    <div>
+                <input
+                    className="border-2 border-teal-400 rounded-lg focus:outline-none text-black"
+                    type="text"
+                    value={reviewer.value}
+                    onChange={handleReviewer}
+                    placeholder="Enter your name" />
+                    </div>
                     <textarea
                     className="w-full text-sm px-3 py-2 text-gray-700 border-2 border-teal-400 rounded-lg focus:outline-none"
                     rows="4"
@@ -94,7 +115,7 @@ return(
                         
                     </button>
                 </form>
-            </h2>
+            
             <ul>
                 {establishment.attributes.reviews && 
                 establishment.attributes.reviews.data.map((review) => {
@@ -111,7 +132,7 @@ return(
                 })
                 }
             </ul>
-            </>
+            </section>
         )}
     </Layout>
 )

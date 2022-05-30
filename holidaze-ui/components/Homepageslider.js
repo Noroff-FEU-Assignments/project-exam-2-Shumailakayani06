@@ -15,8 +15,12 @@ const Homepageslider = ({establishments}) => {
                         <Link href={`establishments/` + establishment.id} >
                              <div className=" border-2 border-teal-400 rounded-lg focus:outline-none card homepage-card">
                             <div className="main-card-info">
-                            <h1>{establishment.attributes.title}</h1>
-                             <h2>{establishment.attributes.rate}</h2>
+                            <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter mb-4"> 
+                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2">
+                 {establishment.attributes.title}
+                </span>
+                </h1> 
+                 <h2>{establishment.attributes.rate}</h2>
                             </div>
                              <img src={establishment.attributes.image_url} alt=""/>
                                  
