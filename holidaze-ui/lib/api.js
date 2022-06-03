@@ -1,4 +1,4 @@
-export async function fetcher(url, options = {}) {
+export async function fetcher(url, options = {header: {'Authorization' :  'Bearer ' + process.env.NEXT_PUBLIC_API_TOKEN}}) {
     let response;
     if (!options) {
       response = await fetch(url);
