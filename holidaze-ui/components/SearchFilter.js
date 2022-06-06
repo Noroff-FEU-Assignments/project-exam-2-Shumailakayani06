@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 
 
@@ -60,9 +61,9 @@ const filter = (e) => {
           {foundHotels && foundHotels.length > 0 ? (
             foundHotels.map((hotel) => (
               <li key={hotel.id} className="user">
-                <Link href={`bookings/`} >
+                <a href={`bookings/`} >
                 <span className="user-name">{hotel.attributes.title}</span>
-                </Link>
+                </a>
               </li>
             ))
           ) : (

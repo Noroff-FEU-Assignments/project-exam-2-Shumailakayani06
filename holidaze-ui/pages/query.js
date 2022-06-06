@@ -67,7 +67,7 @@ export async function getStaticProps(){
     const jwt = typeof window !== 'undefined' 
    
    
-    const queryResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/queries?populate=*`,
+    const queryResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/queries?populate=*`,
     jwt ? {
         headers: {
             Authorization: `Bearer ${jwt}`, 

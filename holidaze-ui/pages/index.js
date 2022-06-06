@@ -15,7 +15,7 @@ import Herobanner from "../components/Herobanner";
 const Home = ({establishments}) => {
     const { user, loading } = useFetchUser();
     const [pageIndex, setPageIndex] = useState(1)
-    const {data}= useSWR(`${process.env.NEXT_PUBLIC_STRAPI_URL}/establishments?pagination[page]=${pageIndex}&pagination[pageSize]=1`, fetcher, {
+    const {data}= useSWR(`https://demo-strapi06.herokuapp.com/api/establishments?pagination[page]=1&pagination[pageSize]=1`, fetcher, {
         fallbackData: establishments
     })
     return (
@@ -83,7 +83,7 @@ export default Home;
 
 export async function getStaticProps(){
    
-  const estabResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/establishments?pagination[page]=1&pagination[pageSize]=1`);
+  const estabResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/establishments?pagination[page]=1&pagination[pageSize]=1`);
   
   return{
       props: {
