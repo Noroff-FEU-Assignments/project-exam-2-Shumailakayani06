@@ -14,7 +14,7 @@ const Establishments = ({establishments}) => {
          
                 return(
                     <ul  key={establishment.id} className="establishment-card">
-                    <li >
+                    <li key={establishment.title} >
                         <Link href={`establishments/` + establishment.id} >
                              <div className=" border-2 border-teal-400 rounded-lg focus:outline-none card estab-card">
                              <img src={establishment.attributes.image_url} alt=""/>
@@ -25,7 +25,7 @@ const Establishments = ({establishments}) => {
                     </li>
                     {!loading && !user ? (
                     <ul key={establishment.id} className="estabBtn">
-                    <li >
+                    <li key={establishment.title} >
                         <Link href={`bookings/` + establishment.id} >
                              <div className="  rounded-lg focus:outline-none btnDiv">
                              

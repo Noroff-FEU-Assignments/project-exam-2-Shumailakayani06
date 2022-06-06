@@ -4,7 +4,7 @@ import { fetcher } from "../lib/api";
 import useSWR from "swr";
 import { useState } from "react";
 import { useFetchUser } from "../lib/authContext";
-import SearchFilter from "../components/searchFilter";
+import SearchFilter from "../components/SearchFilter";
 
 
 const EstablishmentList = ({establishments}) => {

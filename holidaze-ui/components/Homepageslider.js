@@ -10,7 +10,9 @@ const Homepageslider = ({establishments}) => {
             {establishments && 
             establishments.data.map((establishment) =>{
                 return(
-                    <>
+                    <ul key={establishment.id}>
+
+                    
                     <li key={establishment.id}>
                         <Link href={`establishments/` + establishment.id} >
                              <div className=" border-2 border-teal-400 rounded-lg focus:outline-none card homepage-card">
@@ -29,8 +31,9 @@ const Homepageslider = ({establishments}) => {
                             
                         </Link>
                     </li>
+                    </ul>
                    
-                        </>
+                    
                 
                 )
             })}
