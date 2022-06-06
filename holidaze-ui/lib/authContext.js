@@ -20,7 +20,7 @@ export const UserProvider = ({ value, children}) => {
 export const useUser = () => useContext(User);
 
 export const useFetchUser = () => {
-    const [data, setUser] = useState({
+    const [user, setUser] = useState({
         user: userState || null,
         loading: userState === undefined,
     });
@@ -41,5 +41,5 @@ export const useFetchUser = () => {
             isMounted = false;
         };
     }, []);
-    return data;
+    return user;
 }

@@ -8,10 +8,11 @@ const Layout = ({ user, loading = false, children}) => (
     <UserProvider value={{ user, loading}}>
     <Head>
         <title> Holizade</title>
-        <Script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></Script>
-        <Script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></Script>
-
+       
     </Head>
+    <Script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></Script>
+     <Script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></Script>
+
     <Nav />
     <main className="px-4">
         <div 
