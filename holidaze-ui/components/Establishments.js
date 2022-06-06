@@ -24,8 +24,8 @@ const Establishments = ({establishments}) => {
                         </Link>
                     </li>
                     {!loading && !user ? (
-                    <ul className="estabBtn">
-                    <li key={establishment.id}>
+                    <ul key={establishment.id} className="estabBtn">
+                    <li >
                         <Link href={`bookings/` + establishment.id} >
                              <div className="  rounded-lg focus:outline-none btnDiv">
                              

@@ -2,13 +2,14 @@ import Head from "next/head";
 import Nav from "./Nav";
 import { UserProvider } from "../lib/authContext";
 import Footer from "./Footer";
+import Script from 'next/script';
 
 const Layout = ({ user, loading = false, children}) => (
     <UserProvider value={{ user, loading}}>
     <Head>
         <title> Holizade</title>
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <Script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></Script>
+        <Script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></Script>
 
     </Head>
     <Nav />

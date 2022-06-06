@@ -84,7 +84,7 @@ return(
         </div>
  
     
-        {!user && (
+        {/* {!user && (
             <section className="review-section">
    <h2 className="text-3xl md:text-6xl font-extrabold leading-tighter mb-4 ">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2">
@@ -133,7 +133,7 @@ return(
                 }
             </ul>
             </section>
-        )}
+        )} */}
     </Layout>
 )
 }
