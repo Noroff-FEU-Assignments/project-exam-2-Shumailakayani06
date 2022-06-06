@@ -13,8 +13,8 @@ const Establishments = ({establishments}) => {
             establishments.data.map((establishment) =>{
          
                 return(
-                    <ul className="establishment-card">
-                    <li key={establishment.id}>
+                    <ul  key={establishment.id} className="establishment-card">
+                    <li >
                         <Link href={`establishments/` + establishment.id} >
                              <div className=" border-2 border-teal-400 rounded-lg focus:outline-none card estab-card">
                              <img src={establishment.attributes.image_url} alt=""/>
