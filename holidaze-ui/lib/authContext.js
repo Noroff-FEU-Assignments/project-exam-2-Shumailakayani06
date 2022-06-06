@@ -36,10 +36,6 @@ export const useFetchUser = () => {
             setUser({ user, loading: false});
         }
 
-    //  const resolveUser = async () => {
-     
-    //  }
-    //  resolveUser();
 
         return() => {
             isMounted = false;

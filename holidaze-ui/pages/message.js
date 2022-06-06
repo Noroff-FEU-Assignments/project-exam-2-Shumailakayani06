@@ -40,7 +40,7 @@ const Message = (messageReturn) => {
                             <span className="text-black italic"> {message.attributes.messager}</span>
                             </div>
                            <div>
-                         <span className="italic bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2"> Said : </span> <span className="text-black italic" > " {message.attributes.message} " </span> 
+                         <span className="italic bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2"> Said : </span> <span className="text-black italic" > &quot; {message.attributes.message} &quot; </span> 
                           </div>
                         
                             
