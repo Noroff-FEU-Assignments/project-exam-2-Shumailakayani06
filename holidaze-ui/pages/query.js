@@ -62,21 +62,21 @@ const Query = (queryReturn) => {
     
 };
 
-// export async function getStaticProps(){
+export async function getStaticProps(){
    
    
-//     const queryResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/queries?populate=*`);
+    const queryResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/queries?populate=*`);
 
 
-//     return{
-//         props: {
-//             queryReturn : queryResponse.data,
+    return{
+        props: {
+            queryReturn : queryResponse.data,
          
 
-//         }
-//     }
+        }
+    }
  
-//   }
+  }
 
   
 

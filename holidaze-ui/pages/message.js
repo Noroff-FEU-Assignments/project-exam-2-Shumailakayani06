@@ -57,20 +57,20 @@ const Message = (messageReturn) => {
     
 };
 
-// export async function getStaticProps(){
+export async function getStaticProps(){
    
-//     const messageResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/messages?populate=*`);
+    const messageResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/messages?populate=*`);
 
 
-//     return{
-//         props: {
-//             messageReturn : messageResponse.data,
+    return{
+        props: {
+            messageReturn : messageResponse.data,
          
 
-//         }
-//     }
+        }
+    }
  
-//   }
+  }
 
 
 export default Message;

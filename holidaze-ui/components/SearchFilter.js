@@ -5,13 +5,13 @@ import Link from "next/link";
 
 const SearchFilter = () => {
 async function fetchHotels(){
-    const response = await  fetch('http://localhost:1337/api/establishments?populate=*')
+    const response = await  fetch('https://demo-strapi06.herokuapp.com/api/establishments?populate=*')
     return await response.json();
 }
 
 let hotels = []
 
-fetch('http://localhost:1337/api/establishments?populate=*')
+fetch('https://demo-strapi06.herokuapp.com/api/establishments?populate=*')
 .then((response) => {
     return response.json();
 })

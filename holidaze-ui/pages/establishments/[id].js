@@ -85,15 +85,15 @@ return(
 )
 }
 
-// export async function getServerSideProps({req, params}){
-//     const { id } = params;
+export async function getServerSideProps({req, params}){
+    const { id } = params;
  
-//     const estabResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/establishments/${id}?populate=*`);
-//     return {
-//         props: {
-//             establishment: estabResponse.data
-//         }
-//     }
-// }
+    const estabResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/establishments/${id}?populate=*`);
+    return {
+        props: {
+            establishment: estabResponse.data
+        }
+    }
+}
 
 export default Establishment;
