@@ -7,7 +7,7 @@ import { getTokenFromLocalCookie, getTokenFromServerCookie, getUserFromLocalCook
 import { useFetchUser } from "../../lib/authContext";
 
 const Booking = ({establishment, jwt, plot, error}) => {
-    console.log(establishment.attributes.title)
+    
     const { user, loading } =  useFetchUser();
     const router = useRouter();
     const [ firstname, setFirstname] = useState({
@@ -45,7 +45,7 @@ const Booking = ({establishment, jwt, plot, error}) => {
         e.preventDefault();
         const jwt = getTokenFromLocalCookie();
         try {
-             await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/queries`, {
+             await fetcher(`https://demo-strapi06.herokuapp.com/api/queries`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -139,7 +139,7 @@ export async function getServerSideProps({req, params}){
     const jwt = typeof window !== 'undefined' 
     ? getTokenFromLocalCookie
      : getTokenFromServerCookie(req)
-    const estabResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/establishments/${id}?populate=*`, 
+    const estabResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/establishments/${id}?populate=*`, 
     jwt ? {
         headers: {
             Authorization: `Bearer ${jwt}`, 

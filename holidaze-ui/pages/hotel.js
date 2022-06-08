@@ -55,12 +55,12 @@ const Hotel = () => {
     }
 
 
-
+   
     const handleSubmit = async (e) => {
         e.preventDefault();
         const jwt = getTokenFromLocalCookie();
         try {
-             await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/establishments`, {
+             await fetcher(`https://demo-strapi06.herokuapp.com/api/establishments`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -29,7 +29,7 @@ const Establishment = ({establishment, jwt, plot, error}) => {
         e.preventDefault();
         const jwt = getTokenFromLocalCookie();
         try {
-             await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/reviews`, {
+             await fetcher(`https://demo-strapi06.herokuapp.com/api/reviews`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -39,8 +39,7 @@ const Establishment = ({establishment, jwt, plot, error}) => {
                     data: {
                         review: review.value,
                         reviewer: reviewer.value,
-                        // Establishment: establishment.id,
-                        // establishment: establishment.attributes.title
+                     
                     }
                 })
             });
@@ -82,58 +81,6 @@ return(
            </div>
         </Link>
         </div>
- 
-    
-        {/* {!user && (
-            <section className="review-section">
-   <h2 className="text-3xl md:text-6xl font-extrabold leading-tighter mb-4 ">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2">
-              Reviews
-                </span>
-            </h2>
-                <form onSubmit={handleSubmit}>
-                    <div>
-                <input
-                    className="border-2 border-teal-400 rounded-lg focus:outline-none text-black"
-                    type="text"
-                    value={reviewer.value}
-                    onChange={handleReviewer}
-                    placeholder="Enter your name" />
-                    </div>
-                    <textarea
-                    className="w-full text-sm px-3 py-2 text-gray-700 border-2 border-teal-400 rounded-lg focus:outline-none"
-                    rows="4"
-                    value={review.value}
-                    onChange={handleChange}
-                    placeholder="Add your review"
-                    ></textarea>
-                    <button 
-                    className="md:p-2 rounded py-2 text black bg-purple-200 p-2"
-                    type="submit"
-                    >
-                        Add Review
-                        
-                    </button>
-                </form>
-            
-            <ul>
-                {establishment.attributes.reviews && 
-                establishment.attributes.reviews.data.map((review) => {
-                    return (
-                        <div className="reviews">
-                        <li key={review.id}>
-                            <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transperant">
-                                {review.attributes.reviewer}
-                            </span>{' '}
-                            Said: "{review.attributes.review}"
-                        </li>
-                        </div>
-                    )
-                })
-                }
-            </ul>
-            </section>
-        )} */}
     </Layout>
 )
 }
@@ -143,7 +90,7 @@ export async function getServerSideProps({req, params}){
     const jwt = typeof window !== 'undefined' 
     ? getTokenFromLocalCookie
      : getTokenFromServerCookie(req)
-    const estabResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/establishments/${id}?populate=*`, 
+    const estabResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/establishments/${id}?populate=*`, 
     jwt ? {
         headers: {
             Authorization: `Bearer ${jwt}`, 

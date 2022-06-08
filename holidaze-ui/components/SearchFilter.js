@@ -27,7 +27,7 @@ const [name, setName] = useState('');
 
 // the search result
 const [foundHotels, setFoundHotels] = useState(hotels);
-console.log(foundHotels.length)
+
 const filter = (e) => {
   const keyword = e.target.value;
 

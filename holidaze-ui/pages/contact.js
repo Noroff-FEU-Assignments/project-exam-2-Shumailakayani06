@@ -27,7 +27,7 @@ const Contact = (dataReturn) => {
     const handleSubmit = async(e) => {
         e.preventDefault();
         try{
-    await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/messages`,{
+    await fetcher(`https://demo-strapi06.herokuapp.com/api/messages`,{
                 method: 'POST',
                 headers:{
                     'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ export async function getStaticProps(){
     const jwt = typeof window !== 'undefined' 
    
    
-    const estabResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/messages?populate=*`,
+    const estabResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/messages?populate=*`,
     jwt ? {
         headers: {
             Authorization: `Bearer ${jwt}`, 

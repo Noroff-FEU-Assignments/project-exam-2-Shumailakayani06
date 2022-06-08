@@ -10,7 +10,7 @@ import SearchFilter from "../components/SearchFilter";
 const EstablishmentList = ({establishments}) => {
     const { user, loading } = useFetchUser();
     const [pageIndex, setPageIndex] = useState(1)
-    const {data}= useSWR(`${process.env.NEXT_PUBLIC_STRAPI_URL}/establishments?pagination[page]=${pageIndex}&pagination[pageSize]=4`, fetcher, {
+    const {data}= useSWR(`https://demo-strapi06.herokuapp.com/api/establishments?pagination[page]=${pageIndex}&pagination[pageSize]=4`, fetcher, {
         fallbackData: establishments
     })
    
@@ -66,8 +66,8 @@ export default EstablishmentList;
 
 export async function getStaticProps(){
    
-  const estabResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/establishments?pagination[page]=1&pagination[pageSize]=4`);
-//   const allEstabResponse = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/establishments?populate=*`);
+  const estabResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/establishments?pagination[page]=1&pagination[pageSize]=4`);
+
   
   return{
       props: {

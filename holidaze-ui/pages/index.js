@@ -15,7 +15,7 @@ import Herobanner from "../components/Herobanner";
 const Home = ({establishments}) => {
     const { user, loading } = useFetchUser();
     const [pageIndex, setPageIndex] = useState(1)
-    const {data}= useSWR(`https://demo-strapi06.herokuapp.com/api/establishments?pagination[page]=1&pagination[pageSize]=1`, fetcher, {
+    const {data}= useSWR(`https://demo-strapi06.herokuapp.com/api/establishments?pagination[page]=${pageIndex}&pagination[pageSize]=1`, fetcher, {
         fallbackData: establishments
     })
     return (

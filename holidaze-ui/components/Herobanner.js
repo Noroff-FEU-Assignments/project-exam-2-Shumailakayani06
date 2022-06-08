@@ -6,8 +6,8 @@ const Herobanner = () => {
             <Image 
             src="/hero/hero.jpg"
             alt="Hotel picture"
-            width={500}
-            height={500}
+            width={1800}
+            height={800}
             ></Image>
         </div>
     )
