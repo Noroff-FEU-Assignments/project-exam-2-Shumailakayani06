@@ -6,7 +6,7 @@ import { fetcher } from "../../lib/api";
 import { getTokenFromLocalCookie, getTokenFromServerCookie, getUserFromLocalCookie} from "../../lib/auth";
 import { useFetchUser } from "../../lib/authContext";
 
-const Booking = ({establishment, jwt, plot, error}) => {
+const Booking = ({establishment}) => {
     
     const { user, loading } =  useFetchUser();
     const router = useRouter();

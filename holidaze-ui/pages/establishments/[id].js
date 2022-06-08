@@ -6,8 +6,8 @@ import { fetcher } from "../../lib/api";
 import { getTokenFromLocalCookie, getTokenFromServerCookie, getUserFromLocalCookie} from "../../lib/auth";
 import { useFetchUser } from "../../lib/authContext";
 
-const Establishment = ({establishment, jwt, plot, error}) => {
-    console.log(establishment.attributes.title)
+const Establishment = ({establishment}) => {
+    console.log(establishment?.attributes.title)
     const { user, loading } =  useFetchUser();
     const router = useRouter();
     const [ review, setReview] = useState({
