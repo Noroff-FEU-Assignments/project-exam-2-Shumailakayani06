@@ -97,17 +97,7 @@ const Contact = (dataReturn) => {
 
 export async function getStaticProps(){
    
-    const jwt = typeof window !== 'undefined' 
-   
-   
-    const estabResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/messages?populate=*`,
-    jwt ? {
-        headers: {
-            Authorization: `Bearer ${jwt}`, 
-        },
-    }
-    : ''
-    );
+    const estabResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/messages?populate=*`);
 
     return{
         props: {

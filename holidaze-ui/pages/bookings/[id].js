@@ -136,17 +136,8 @@ return(
 
 export async function getServerSideProps({req, params}){
     const { id } = params;
-    const jwt = typeof window !== 'undefined' 
-    ? getTokenFromLocalCookie
-     : getTokenFromServerCookie(req)
-    const estabResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/establishments/${id}?populate=*`, 
-    jwt ? {
-        headers: {
-            Authorization: `Bearer ${jwt}`, 
-        },
-    }
-    : ''
-    );
+   
+    const estabResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/establishments/${id}?populate=*`);
     return {
         props: {
             establishment: estabResponse.data

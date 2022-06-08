@@ -64,17 +64,8 @@ const Query = (queryReturn) => {
 
 export async function getStaticProps(){
    
-    const jwt = typeof window !== 'undefined' 
    
-   
-    const queryResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/queries?populate=*`,
-    jwt ? {
-        headers: {
-            Authorization: `Bearer ${jwt}`, 
-        },
-    }
-    : ''
-    );
+    const queryResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/queries?populate=*`);
 
 
     return{

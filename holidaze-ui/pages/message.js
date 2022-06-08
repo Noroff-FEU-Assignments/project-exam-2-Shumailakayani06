@@ -59,17 +59,7 @@ const Message = (messageReturn) => {
 
 export async function getStaticProps(){
    
-    const jwt = typeof window !== 'undefined' 
-   
-   
-    const messageResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/messages?populate=*`,
-    jwt ? {
-        headers: {
-            Authorization: `Bearer ${jwt}`, 
-        },
-    }
-    : ''
-    );
+    const messageResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/messages?populate=*`);
 
 
     return{
