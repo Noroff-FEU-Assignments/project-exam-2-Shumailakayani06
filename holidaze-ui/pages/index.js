@@ -12,7 +12,7 @@ import Herobanner from "../components/Herobanner";
 
 
 
-const Home = ({establishments}) => {
+const Home = ({establishments = []}) => {
     const { user, loading } = useFetchUser();
     const [pageIndex, setPageIndex] = useState(1)
     const {data}= useSWR(`https://demo-strapi06.herokuapp.com/api/establishments?pagination[page]=${pageIndex}&pagination[pageSize]=1`, fetcher, {
@@ -81,13 +81,13 @@ const Home = ({establishments}) => {
 
 export default Home;
 
-export async function getStaticProps(){
+// export async function getStaticProps(){
    
-  const estabResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/establishments?pagination[page]=1&pagination[pageSize]=1`);
+//   const estabResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/establishments?pagination[page]=1&pagination[pageSize]=1`);
   
-  return{
-      props: {
-          establishments: estabResponse
-      }
-  }
-}
+//   return{
+//       props: {
+//           establishments: estabResponse
+//       }
+//   }
+// }

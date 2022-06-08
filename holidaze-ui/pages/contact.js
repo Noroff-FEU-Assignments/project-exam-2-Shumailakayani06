@@ -95,17 +95,17 @@ const Contact = (dataReturn) => {
     
 };
 
-export async function getStaticProps(){
+// export async function getStaticProps(){
    
-    const estabResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/messages?populate=*`);
+//     const estabResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/messages?populate=*`);
 
-    return{
-        props: {
-            dataReturn : estabResponse.data
-        }
-    }
+//     return{
+//         props: {
+//             dataReturn : estabResponse.data
+//         }
+//     }
  
-  }
+//   }
 
 
 
