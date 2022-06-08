@@ -57,7 +57,7 @@ const Booking = ({establishment}) => {
                         lastname: lastname.value,
                         email: email.value,
                         date: date.value,
-                        hotelname: establishment.attributes.title
+                        hotelname: establishment?.attributes.title
                         
                     }
                 })
@@ -72,7 +72,7 @@ return(
         
         <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter mb-4">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 py-2">
-             {establishment.attributes.title}
+             {establishment?.attributes.title}
             </span>
         </h1>
 
@@ -134,15 +134,15 @@ return(
 )
 }
 
-export async function getServerSideProps({req, params}){
-    const { id } = params;
+// export async function getServerSideProps({req, params}){
+//     const { id } = params;
    
-    const estabResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/establishments/${id}?populate=*`);
-    return {
-        props: {
-            establishment: estabResponse.data
-        }
-    }
-}
+//     const estabResponse = await fetcher(`https://demo-strapi06.herokuapp.com/api/establishments/${id}?populate=*`);
+//     return {
+//         props: {
+//             establishment: estabResponse.data
+//         }
+//     }
+// }
 
 export default Booking;
